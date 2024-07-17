@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container mt5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2 mt-5">
+      <h2 class="text-center mt-5">Create a new landing page</h2>
+      <form method="post" action="{% url 'create_app' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary shadow">Create Django App</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
